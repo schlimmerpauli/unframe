@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach Node‑SSR",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}/ssr",
+      "remoteRoot": "${workspaceFolder}/ssr"
+    },
+    {
+      "name": "Debug Go (no air)",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceFolder}/backend/cmd/server",
+      "cwd": "${workspaceFolder}/backend"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Dev‑all + Debug Node",
+      "preLaunchTask": "dev-all",
+      "configurations": ["Attach Node‑SSR"]
+    },
+    {
+      "name": "Dev‑all + Debug Go",
+      "preLaunchTask": "dev-all",
+      "configurations": ["Debug Go (no air)"]
+    }
+  ]
+}

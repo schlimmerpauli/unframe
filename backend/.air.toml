@@ -1,0 +1,5 @@
+[build]
+  cmd = "go build -o tmp/main.exe ./cmd/server"
+  include_ext = ["go", "html"]
+  # Ignore the static assets, temp folder, and your SSR/Node code
+  exclude_dir = ["static","tmp","../ssr","node_modules"]

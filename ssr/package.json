@@ -1,0 +1,19 @@
+{
+  "name": "node-ssr",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2",
+    "linkedom": "^0.18.11"
+  },
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "dev": "nodemon --watch web-components --watch ssr-server.js ssr-server.js",
+    "dev:debug": "nodemon --inspect=9229 --watch web-components --watch ssr-server.js ssr-server.js",
+    "debug": "node --inspect=9229 ssr-server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "vite": "^6.3.5"
+  }
+}

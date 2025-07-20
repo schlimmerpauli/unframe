@@ -1,0 +1,60 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    /* Go hot‑reload ------------------------------------------------- */
+    {
+      "label": "go-air",
+      "type": "shell",
+      "command": "air",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      }, // <‑‑ add this
+      "isBackground": true
+    },
+    /* Node‑SSR hot‑reload ------------------------------------------ */
+    {
+      "label": "node-ssr",
+      "type": "shell",
+      "command": "npx",
+      "args": [
+        "nodemon",
+        "--inspect=9229",
+        "--watch",
+        "web-components",
+        "--watch",
+        "ssr-server.js",
+        "ssr-server.js"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/ssr"
+      },
+      "isBackground": true
+    },
+    /* LiveReload ---------------------------------------------------- */
+    {
+      "label": "livereload",
+      "type": "shell",
+      "command": "npx",
+      "args": [
+        "livereload",
+        ".",
+        "--port",
+        "35729"
+      ],
+      "isBackground": true
+    },
+    {
+  "label": "vite-watch",
+  "type": "npm",
+  "script": "watch",
+  "path": "ssr",
+  "isBackground": true
+},
+    /* Aggregator ---------------------------------------------------- */
+    {
+      "label": "dev-all",
+      "dependsOn": ["go-air","node-ssr","vite-watch","livereload"],
+      "dependsOrder": "parallel"
+    }
+  ]
+}
