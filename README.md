@@ -40,7 +40,7 @@ repo‑root/
 ## Quick start
 
 ```bash
-git clone https://github.com/yourname/go-webcomponents-ssr.git
+git clone https://github.com/schlimmerpauli/unframe.git
 cd go-webcomponents-ssr
 
 # Go deps
